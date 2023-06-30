@@ -6,28 +6,24 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core/index.min.css" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/autorotate-plugin/index.min.css" />
-        <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/gyroscope-plugin/index.min.css" /> -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/gyroscope-plugin/index.min.css" />
     </head>
 
     <script src="https://cdn.jsdelivr.net/npm/three/build/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core/index.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/autorotate-plugin/index.min.js"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/gyroscope-plugin/index.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/gyroscope-plugin/index.min.js"></script>
 
     <!-- the viewer container must have a defined size -->
-    <div id="viewer" style="width: 95vw; height: 95vh;"></div>
+    <div id="viewer" style="width: 90vw; height: 90vh;"></div>
 
     <script>
+        const baseUrl = "https://stoy.codes/pano/images/";
         const viewer = new PhotoSphereViewer.Viewer({
             container: document.querySelector('#viewer'),
-            panorama: 'https://photo-sphere-viewer-data.netlify.app/assets/sphere.jpg',
+            panorama: baseUrl + 'sphere.jpg',
             caption: 'Detta blir action <b>&copy; Eller ka du trur?</b>',
             plugins: 
-                [[PhotoSphereViewer.AutorotatePlugin, {
-                    autorotatePitch: '80deg',
-                }],],
-                // [PhotoSphereViewer.GyroscopePlugin],
+                [PhotoSphereViewer.GyroscopePlugin],
             
         });
     </script>
